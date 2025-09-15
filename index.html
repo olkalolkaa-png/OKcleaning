@@ -6,18 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      background: #f5f6fa; /* ніжний фон */
       color: #333;
     }
     header {
-      background: #1a73e8;
+      background: #6c5ce7; /* м’який фіолетовий */
       color: white;
-      padding: 20px;
+      padding: 25px 20px;
       text-align: center;
       position: sticky;
       top: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
     nav {
       margin-top: 10px;
@@ -27,9 +28,11 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
     nav a:hover {
       text-decoration: underline;
+      color: #ffeaa7; 
     }
     .container {
       max-width: 1100px;
@@ -37,23 +40,30 @@
       padding: 40px 20px;
     }
     h2 {
-      color: #1a73e8;
+      color: #6c5ce7;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
     .prices table {
       width: 100%;
       border-collapse: collapse;
       background: white;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .prices th, .prices td {
-      border: 1px solid #ddd;
-      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      padding: 15px;
       text-align: left;
     }
     .prices th {
-      background: #1a73e8;
+      background: #6c5ce7;
       color: white;
     }
     .lang-switch {
@@ -63,20 +73,65 @@
     }
     .lang-switch button {
       margin: 0 5px;
-      padding: 5px 10px;
+      padding: 5px 12px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      background: #dfe6e9;
+      transition: 0.3s;
     }
     .lang-switch button:hover {
-      background: #eee;
+      background: #b2bec3;
     }
     footer {
-      background: #1a73e8;
+      background: #6c5ce7;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       margin-top: 40px;
+    }
+    /* переваги */
+    .advantages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .advantage {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      flex: 1 1 250px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .advantage:hover {
+      transform: translateY(-5px);
+    }
+    .advantage img {
+      max-width: 100px;
+      margin-bottom: 15px;
+    }
+    .advantage h3 {
+      margin-bottom: 10px;
+      color: #341f97;
+    }
+    /* кнопка зв'язатися */
+    .contact-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: #00b894;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .contact-btn:hover {
+      background: #019875;
     }
   </style>
 </head>
@@ -100,9 +155,27 @@
     <section id="about">
       <h2 id="about-title">O nas</h2>
       <p id="about-text">
-        Jesteśmy profesjonalną firmą sprzątającą, która oferuje usługi najwyższej jakości
-        dla klientów indywidualnych i biznesowych. Dbamy o każdy szczegół i satysfakcję klienta.
+        Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach.
+        Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.
       </p>
+
+      <div class="advantages">
+        <div class="advantage">
+          <img src="https://img.icons8.com/color/96/000000/safe.png" alt="Bezpieczna chemia">
+          <h3>Bezpieczna chemia</h3>
+          <p>Używamy wyłącznie certyfikowane, hipoalergiczne środki czystości, bezpieczne dla dzieci i zwierząt.</p>
+        </div>
+        <div class="advantage">
+          <img src="https://img.icons8.com/color/96/000000/clock.png" alt="Szybko i sprawnie">
+          <h3>Szybko i sprawnie</h3>
+          <p>Profesjonalny zespół dba o każdy szczegół, aby sprzątanie było efektywne i komfortowe.</p>
+        </div>
+        <div class="advantage">
+          <img src="https://img.icons8.com/color/96/000000/star.png" alt="Najwyższa jakość">
+          <h3>Najwyższa jakość</h3>
+          <p>Dbamy o każdy detal, oferując usługi, które zawsze spełniają oczekiwania klienta.</p>
+        </div>
+      </div>
     </section>
 
     <section id="prices" class="prices">
@@ -130,15 +203,16 @@
     <section id="contact">
       <h2 id="contact-title">Kontakt</h2>
       <p id="contact-text">
-        Telefon: +48 123 456 789<br>
-        Email: kontakt@okcleaning.pl<br>
-        Adres: Warszawa, Polska
+        Miasto: Poznań<br>
+        Telefon: +48 730 352 641<br>
+        Email: kontakt@okcleaning.pl
       </p>
+      <a href="tel:+48730352641" class="contact-btn">Skontaktuj się</a>
     </section>
   </div>
 
   <footer>
-    <p id="footer-text">© 2025 OK Cleaning – Profesjonalne sprzątanie</p>
+    <p id="footer-text">© 2025 OK Cleaning – Profesjonalne sprzątanie w Poznaniu</p>
   </footer>
 
   <script>
@@ -147,37 +221,37 @@
         title: "OK Cleaning",
         nav: {about:"O nas", prices:"Cennik", contact:"Kontakt"},
         aboutTitle:"O nas",
-        aboutText:"Jesteśmy profesjonalną firmą sprzątającą, która oferuje usługi najwyższej jakości dla klientów indywidualnych i biznesowych. Dbamy o każdy szczegół i satysfakcję klienta.",
+        aboutText:"Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach. Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.",
         pricesTitle:"Cennik",
         serviceCol:"Usługa",
         priceCol:"Cena",
         contactTitle:"Kontakt",
-        contactText:"Telefon: +48 123 456 789\nEmail: kontakt@okcleaning.pl\nAdres: Warszawa, Polska",
-        footer:"© 2025 OK Cleaning – Profesjonalne sprzątanie"
+        contactText:"Miasto: Poznań\nTelefon: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+        footer:"© 2025 OK Cleaning – Profesjonalne sprzątanie w Poznaniu"
       },
       en: {
         title: "OK Cleaning",
         nav: {about:"About us", prices:"Prices", contact:"Contact"},
         aboutTitle:"About us",
-        aboutText:"We are a professional cleaning company that provides top-quality services for both individual and business clients. We care about every detail and customer satisfaction.",
+        aboutText:"We are a professional cleaning company operating in Poznań and nearby towns. Arrival is always free – you pay only for the service. We take care of every detail and customer satisfaction.",
         pricesTitle:"Prices",
         serviceCol:"Service",
         priceCol:"Price",
         contactTitle:"Contact",
-        contactText:"Phone: +48 123 456 789\nEmail: kontakt@okcleaning.pl\nAddress: Warsaw, Poland",
-        footer:"© 2025 OK Cleaning – Professional cleaning"
+        contactText:"City: Poznań\nPhone: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+        footer:"© 2025 OK Cleaning – Professional cleaning in Poznań"
       },
       ua: {
         title: "OK Cleaning",
         nav: {about:"Про нас", prices:"Ціни", contact:"Контакти"},
         aboutTitle:"Про нас",
-        aboutText:"Ми – професійна клінінгова компанія, яка надає послуги найвищої якості для приватних та бізнес-клієнтів. Ми дбаємо про кожну деталь та задоволення клієнта.",
+        aboutText:"Ми – професійна клінінгова компанія, яка працює в Познані та околицях. Приїзд завжди безкоштовний – ви платите лише за послугу. Ми дбаємо про кожну деталь та задоволення клієнта.",
         pricesTitle:"Ціни",
         serviceCol:"Послуга",
         priceCol:"Ціна",
         contactTitle:"Контакти",
-        contactText:"Телефон: +48 123 456 789\nEmail: kontakt@okcleaning.pl\nАдреса: Варшава, Польща",
-        footer:"© 2025 OK Cleaning – Професійне прибирання"
+        contactText:"Місто: Познань\nТелефон: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+        footer:"© 2025 OK Cleaning – Професійне прибирання в Познані"
       }
     };
 
