@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Korol Cleaning</title>
+<title>Korol Sredi Cleaning</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -104,7 +104,7 @@
 <body>
 
 <header>
-  <h1 id="title">Korol Cleaning</h1>
+  <h1 id="title">Король серед Клинингов</h1>
   <div class="lang-switch">
     <button onclick="setLang('pl')">PL</button>
     <button onclick="setLang('en')">EN</button>
@@ -148,11 +148,19 @@
 <section id="prices" class="prices">
 <h2 id="prices-title">Cennik</h2>
 
-<h3>Sprzątanie</h3>
+<h3>Sprzątanie mieszkań</h3>
 <table>
   <thead><tr><th>Usługa</th><th>Cena</th></tr></thead>
   <tbody>
-    <tr><td>Sprzątanie</td><td>od 170 PLN</td></tr>
+    <tr><td>Sprzątanie mieszkań</td><td>od 180 PLN</td></tr>
+  </tbody>
+</table>
+
+<h3>Sprzątanie domów</h3>
+<table>
+  <thead><tr><th>Usługa</th><th>Cena</th></tr></thead>
+  <tbody>
+    <tr><td>Sprzątanie domów</td><td>od 300 PLN</td></tr>
   </tbody>
 </table>
 
@@ -201,26 +209,26 @@
 </div>
 
 <footer>
-<p id="footer-text">© 2025 Korol Cleaning – Profesjonalne sprzątanie w Poznaniu</p>
+<p id="footer-text">© 2025 Король серед Клинингов – Profesjonalne sprzątanie w Poznaniu</p>
 </footer>
 
 <script>
 const translations = {
-  pl: {title:"Korol Cleaning", nav:{about:"O nas",prices:"Cennik",contact:"Kontakt"},
+  pl: {title:"Король серед Клинингов", nav:{about:"O nas",prices:"Cennik",contact:"Kontakt"},
        aboutTitle:"O nas", aboutText:"Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach. Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.", 
        pricesTitle:"Cennik", serviceCol:"Usługa", priceCol:"Cena",
        contactTitle:"Kontakt", contactText:"Miasto: Poznań\nTelefon: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
-       footer:"© 2025 Korol Cleaning – Profesjonalne sprzątanie w Poznaniu"},
-  en: {title:"Korol Cleaning", nav:{about:"About us",prices:"Prices",contact:"Contact"},
+       footer:"© 2025 Король серед Клинингов – Profesjonalne sprzątanie w Poznaniu"},
+  en: {title:"Korol Sredi Cleaning", nav:{about:"About us",prices:"Prices",contact:"Contact"},
        aboutTitle:"About us", aboutText:"We are a professional cleaning company operating in Poznań and nearby towns. Arrival is always free – you pay only for the service. We take care of every detail and customer satisfaction.",
        pricesTitle:"Prices", serviceCol:"Service", priceCol:"Price",
        contactTitle:"Contact", contactText:"City: Poznań\nPhone: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
-       footer:"© 2025 Korol Cleaning – Professional cleaning in Poznań"},
-  ua: {title:"Korol Cleaning", nav:{about:"Про нас",prices:"Ціни",contact:"Контакти"},
+       footer:"© 2025 Korol Sredi Cleaning – Professional cleaning in Poznań"},
+  ua: {title:"Король серед Клинингов", nav:{about:"Про нас",prices:"Ціни",contact:"Контакти"},
        aboutTitle:"Про нас", aboutText:"Ми – професійна клінінгова компанія, яка працює в Познані та околицях. Приїзд завжди безкоштовний – ви платите лише за послугу. Ми дбаємо про кожну деталь та задоволення клієнта.",
        pricesTitle:"Ціни", serviceCol:"Послуга", priceCol:"Ціна",
        contactTitle:"Контакти", contactText:"Місто: Познань\nТелефон: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
-       footer:"© 2025 Korol Cleaning – Професійне прибирання в Познані"}
+       footer:"© 2025 Король серед Клинингов – Професійне прибирання в Познані"}
 };
 function setLang(lang){
   const t = translations[lang];
