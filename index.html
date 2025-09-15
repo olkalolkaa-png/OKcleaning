@@ -194,4 +194,66 @@
 <table>
   <thead><tr><th>Usługa</th><th>Cena</th></tr></thead>
   <tbody>
-   
+    <tr><td>Fotele + kanapa + boczki + podłoga</td><td>350 PLN</td></tr>
+    <tr><td>Fotele + kanapa</td><td>200 PLN</td></tr>
+    <tr><td>Bagażnik</td><td>60 PLN</td></tr>
+    <tr><td>Fotelik samochodowy</td><td>60 PLN</td></tr>
+    <tr><td>Ozonowanie</td><td>50 PLN</td></tr>
+    <tr><td>Samochód ciężarowy</td><td>do uzgodnienia</td></tr>
+  </tbody>
+</table>
+
+<p class="min-order">Minimalna koszt zamówienia: 170 PLN</p>
+</section>
+
+<section id="contact">
+<h2 id="contact-title">Kontakt</h2>
+<p id="contact-text">
+  Miasto: Poznań<br>
+  Telefon: +48 730 352 641<br>
+  Email: kontakt@okcleaning.pl
+</p>
+<a href="tel:+48730352641" class="contact-btn">Skontaktuj się</a>
+</section>
+
+</div>
+
+<footer>
+<p id="footer-text">© 2025 Król Sprzątania – Profesjonalne sprzątanie w Poznaniu</p>
+</footer>
+
+<script>
+const translations = {
+  pl: {title:"Król Sprzątania", nav:{about:"O nas",prices:"Cennik",contact:"Kontakt"},
+       aboutTitle:"O nas", aboutText:"Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach. Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.", 
+       pricesTitle:"Cennik",
+       contactTitle:"Kontakt", contactText:"Miasto: Poznań\nTelefon: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+       footer:"© 2025 Król Sprzątania – Profesjonalne sprzątanie w Poznaniu"},
+  en: {title:"King of Cleaning", nav:{about:"About us",prices:"Prices",contact:"Contact"},
+       aboutTitle:"About us", aboutText:"We are a professional cleaning company operating in Poznań and nearby towns. Arrival is always free – you pay only for the service. We take care of every detail and customer satisfaction.",
+       pricesTitle:"Prices",
+       contactTitle:"Contact", contactText:"City: Poznań\nPhone: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+       footer:"© 2025 King of Cleaning – Professional cleaning in Poznań"},
+  ua: {title:"Король клінінгу", nav:{about:"Про нас",prices:"Ціни",contact:"Контакти"},
+       aboutTitle:"Про нас", aboutText:"Ми – професійна клінінгова компанія, яка працює в Познані та околицях. Приїзд завжди безкоштовний – ви платите лише за послугу. Ми дбаємо про кожну деталь та задоволення клієнта.",
+       pricesTitle:"Ціни",
+       contactTitle:"Контакти", contactText:"Місто: Познань\nТелефон: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+       footer:"© 2025 Король клінінгу – Професійне прибирання в Познані"}
+};
+function setLang(lang){
+  const t = translations[lang];
+  document.getElementById("title").innerText=t.title;
+  document.getElementById("nav-about").innerText=t.nav.about;
+  document.getElementById("nav-prices").innerText=t.nav.prices;
+  document.getElementById("nav-contact").innerText=t.nav.contact;
+  document.getElementById("about-title").innerText=t.aboutTitle;
+  document.getElementById("about-text").innerText=t.aboutText;
+  document.getElementById("prices-title").innerText=t.pricesTitle;
+  document.getElementById("contact-title").innerText=t.contactTitle;
+  document.getElementById("contact-text").innerText=t.contactText;
+  document.getElementById("footer-text").innerText=t.footer;
+}
+</script>
+
+</body>
+</html>
