@@ -1,58 +1,202 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
+  <title>OK Cleaning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Моя компанія</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    header { background:#1e90ff; color:white; padding:30px; text-align:center; }
-    section { padding:40px; max-width:900px; margin:auto; }
-    h2 { color:#1e90ff; }
-    .prices { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-    .card { border:1px solid #ccc; padding:20px; border-radius:10px; background:#f9f9f9; }
-    footer { background:#333; color:white; text-align:center; padding:20px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #1a73e8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      color: #1a73e8;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .prices table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .prices th, .prices td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    .prices th {
+      background: #1a73e8;
+      color: white;
+    }
+    .lang-switch {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    .lang-switch button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .lang-switch button:hover {
+      background: #eee;
+    }
+    footer {
+      background: #1a73e8;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Моя компанія</h1>
-    <p>Професійні послуги для вашого дому та бізнесу</p>
+    <h1 id="title">OK Cleaning</h1>
+    <div class="lang-switch">
+      <button onclick="setLang('pl')">PL</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ua')">UA</button>
+    </div>
+    <nav>
+      <a href="#about" id="nav-about">O nas</a>
+      <a href="#prices" id="nav-prices">Cennik</a>
+      <a href="#contact" id="nav-contact">Kontakt</a>
+    </nav>
   </header>
 
-  <section id="about">
-    <h2>Про нас</h2>
-    <p>Ми команда професіоналів з досвідом понад 10 років. Гарантуємо якість, швидкість та доступні ціни. 
-    Працюємо по всій Польщі та Україні.</p>
-  </section>
+  <div class="container">
+    <section id="about">
+      <h2 id="about-title">O nas</h2>
+      <p id="about-text">
+        Jesteśmy profesjonalną firmą sprzątającą, która oferuje usługi najwyższej jakości
+        dla klientów indywidualnych i biznesowych. Dbamy o każdy szczegół i satysfakcję klienta.
+      </p>
+    </section>
 
-  <section id="prices">
-    <h2>Ціни</h2>
-    <div class="prices">
-      <div class="card">
-        <h3>Послуга 1</h3>
-        <p>Опис послуги.</p>
-        <strong>від 100 zł</strong>
-      </div>
-      <div class="card">
-        <h3>Послуга 2</h3>
-        <p>Опис послуги.</p>
-        <strong>від 200 zł</strong>
-      </div>
-    </div>
-  </section>
+    <section id="prices" class="prices">
+      <h2 id="prices-title">Cennik</h2>
+      <table>
+        <thead>
+          <tr>
+            <th id="service-col">Usługa</th>
+            <th id="price-col">Cena</th>
+          </tr>
+        </thead>
+        <tbody id="price-list">
+          <tr><td>Sprzątanie mieszkania do 50m²</td><td>od 250 zł</td></tr>
+          <tr><td>Sprzątanie mieszkania 50-100m²</td><td>od 350 zł</td></tr>
+          <tr><td>Sprzątanie mieszkania powyżej 100m²</td><td>od 450 zł</td></tr>
+          <tr><td>Sprzątanie domu jednorodzinnego</td><td>od 500 zł</td></tr>
+          <tr><td>Sprzątanie biura do 100m²</td><td>od 300 zł</td></tr>
+          <tr><td>Mycie okien</td><td>od 40 zł / szt.</td></tr>
+          <tr><td>Pranie tapicerki meblowej</td><td>od 150 zł</td></tr>
+          <tr><td>Pranie dywanów i wykładzin</td><td>od 20 zł / m²</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-  <section id="contact">
-    <h2>Контакти</h2>
-    <p>📞 Телефон: +48 123 456 789</p>
-    <p>📧 Email: info@mojakompanija.pl</p>
-    <p>📍 Адреса: Warszawa, ul. Przykładowa 10</p>
-  </section>
+    <section id="contact">
+      <h2 id="contact-title">Kontakt</h2>
+      <p id="contact-text">
+        Telefon: +48 123 456 789<br>
+        Email: kontakt@okcleaning.pl<br>
+        Adres: Warszawa, Polska
+      </p>
+    </section>
+  </div>
 
   <footer>
-    <p>© 2025 Моя компанія. Всі права захищені.</p>
+    <p id="footer-text">© 2025 OK Cleaning – Profesjonalne sprzątanie</p>
   </footer>
+
+  <script>
+    const translations = {
+      pl: {
+        title: "OK Cleaning",
+        nav: {about:"O nas", prices:"Cennik", contact:"Kontakt"},
+        aboutTitle:"O nas",
+        aboutText:"Jesteśmy profesjonalną firmą sprzątającą, która oferuje usługi najwyższej jakości dla klientów indywidualnych i biznesowych. Dbamy o każdy szczegół i satysfakcję klienta.",
+        pricesTitle:"Cennik",
+        serviceCol:"Usługa",
+        priceCol:"Cena",
+        contactTitle:"Kontakt",
+        contactText:"Telefon: +48 123 456 789\nEmail: kontakt@okcleaning.pl\nAdres: Warszawa, Polska",
+        footer:"© 2025 OK Cleaning – Profesjonalne sprzątanie"
+      },
+      en: {
+        title: "OK Cleaning",
+        nav: {about:"About us", prices:"Prices", contact:"Contact"},
+        aboutTitle:"About us",
+        aboutText:"We are a professional cleaning company that provides top-quality services for both individual and business clients. We care about every detail and customer satisfaction.",
+        pricesTitle:"Prices",
+        serviceCol:"Service",
+        priceCol:"Price",
+        contactTitle:"Contact",
+        contactText:"Phone: +48 123 456 789\nEmail: kontakt@okcleaning.pl\nAddress: Warsaw, Poland",
+        footer:"© 2025 OK Cleaning – Professional cleaning"
+      },
+      ua: {
+        title: "OK Cleaning",
+        nav: {about:"Про нас", prices:"Ціни", contact:"Контакти"},
+        aboutTitle:"Про нас",
+        aboutText:"Ми – професійна клінінгова компанія, яка надає послуги найвищої якості для приватних та бізнес-клієнтів. Ми дбаємо про кожну деталь та задоволення клієнта.",
+        pricesTitle:"Ціни",
+        serviceCol:"Послуга",
+        priceCol:"Ціна",
+        contactTitle:"Контакти",
+        contactText:"Телефон: +48 123 456 789\nEmail: kontakt@okcleaning.pl\nАдреса: Варшава, Польща",
+        footer:"© 2025 OK Cleaning – Професійне прибирання"
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("nav-about").innerText = t.nav.about;
+      document.getElementById("nav-prices").innerText = t.nav.prices;
+      document.getElementById("nav-contact").innerText = t.nav.contact;
+      document.getElementById("about-title").innerText = t.aboutTitle;
+      document.getElementById("about-text").innerText = t.aboutText;
+      document.getElementById("prices-title").innerText = t.pricesTitle;
+      document.getElementById("service-col").innerText = t.serviceCol;
+      document.getElementById("price-col").innerText = t.priceCol;
+      document.getElementById("contact-title").innerText = t.contactTitle;
+      document.getElementById("contact-text").innerText = t.contactText;
+      document.getElementById("footer-text").innerText = t.footer;
+    }
+  </script>
 
 </body>
 </html>
