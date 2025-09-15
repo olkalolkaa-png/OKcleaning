@@ -1,297 +1,243 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>OK Cleaning</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f5f6fa;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                  url('https://chatgpt.com/s/m_68c7ec089ec08191918f751def2e173b') center/cover no-repeat;
-      color: white;
-      padding: 25px 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      color: #ffeaa7; 
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    h2 {
-      color: #6c5ce7;
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 2rem;
-    }
-    p {
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-    .prices table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .prices th, .prices td {
-      border-bottom: 1px solid #ddd;
-      padding: 15px;
-      text-align: left;
-    }
-    .prices th {
-      background: #6c5ce7;
-      color: white;
-    }
-    .lang-switch {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-    }
-    .lang-switch button {
-      margin: 0 5px;
-      padding: 5px 12px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background: #dfe6e9;
-      transition: 0.3s;
-    }
-    .lang-switch button:hover {
-      background: #b2bec3;
-    }
-    footer {
-      background: #6c5ce7;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .advantages {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin: 40px 0;
-    }
-    .advantage {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      flex: 1 1 250px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .advantage:hover {
-      transform: translateY(-5px);
-    }
-    .advantage img {
-      max-width: 100px;
-      margin-bottom: 15px;
-    }
-    .advantage h3 {
-      margin-bottom: 10px;
-      color: #341f97;
-    }
-    .contact-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background: #00b894;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .contact-btn:hover {
-      background: #019875;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>OK Cleaning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: #f5f6fa;
+    color: #333;
+  }
+  header {
+    background: linear-gradient(rgba(108,92,231,0.85), rgba(108,92,231,0.85)), url('https://images.unsplash.com/photo-1581579182563-7429b234c877?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-bottom: 5px solid #00b894;
+  }
+  header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+  nav {
+    margin-top: 15px;
+  }
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  nav a:hover { color: #ffeaa7; text-decoration: underline; }
+  .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+  h2 { color: #6c5ce7; text-align: center; margin-bottom: 25px; font-size: 2rem; }
+  p { line-height: 1.7; font-size: 1.15rem; color: #2d3436; }
+  .advantages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  .advantage {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    flex: 1 1 250px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .advantage:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  }
+  .advantage img { max-width: 80px; margin-bottom: 15px; }
+  .advantage h3 { margin-bottom: 12px; color: #341f97; }
+  .contact-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #00b894;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.3s;
+  }
+  .contact-btn:hover { background: #019875; transform: scale(1.05); }
+  .prices h3 { background: #341f97; color: white; padding: 12px 20px; border-radius: 10px; margin-top: 30px; }
+  .prices table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin-top: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .prices table:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
+  .prices th, .prices td { border-bottom: 1px solid #ddd; padding: 15px; text-align: left; font-size: 1rem; }
+  .prices th { background: #6c5ce7; color: white; font-weight: 500; }
+  footer { background: #6c5ce7; color: white; text-align: center; padding: 25px; margin-top: 50px; font-size: 1rem; }
+  .lang-switch { position: absolute; right: 20px; top: 20px; }
+  .lang-switch button { margin: 0 5px; padding: 6px 14px; border: none; border-radius: 5px; cursor: pointer; background: #dfe6e9; transition: 0.3s; }
+  .lang-switch button:hover { background: #b2bec3; }
+  @media(max-width:768px){
+    .advantages { flex-direction: column; align-items: center; }
+    header h1 { font-size: 2.2rem; }
+    .contact-btn { width: 100%; text-align: center; }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1 id="title">OK Cleaning</h1>
-    <div class="lang-switch">
-      <button onclick="setLang('pl')">PL</button>
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('ua')">UA</button>
-    </div>
-    <nav>
-      <a href="#about" id="nav-about">O nas</a>
-      <a href="#prices" id="nav-prices">Cennik</a>
-      <a href="#contact" id="nav-contact">Kontakt</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <section id="about">
-      <h2 id="about-title">O nas</h2>
-      <p id="about-text">
-        Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach.
-        Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.
-      </p>
-
-      <div class="advantages">
-        <div class="advantage">
-          <img src="https://img.icons8.com/color/96/000000/safe.png" alt="Bezpieczna chemia">
-          <h3>Bezpieczna chemia</h3>
-          <p>Używamy wyłącznie certyfikowane, hipoalergiczne środki czystości, bezpieczne dla dzieci i zwierząt.</p>
-        </div>
-        <div class="advantage">
-          <img src="https://img.icons8.com/color/96/000000/clock.png" alt="Szybko i sprawnie">
-          <h3>Szybko i sprawnie</h3>
-          <p>Profesjonalny zespół dba o każdy szczegół, aby sprzątanie było efektywne i komfortowe.</p>
-        </div>
-        <div class="advantage">
-          <img src="https://img.icons8.com/color/96/000000/star.png" alt="Najwyższa jakość">
-          <h3>Najwyższa jakość</h3>
-          <p>Dbamy o każdy detal, oferując usługi, które zawsze spełniają oczekiwania klienta.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="prices" class="prices">
-      <h2 id="prices-title">Cennik</h2>
-      <table>
-        <thead>
-          <tr>
-            <th id="service-col">Usługa</th>
-            <th id="price-col">Cena</th>
-          </tr>
-        </thead>
-        <tbody id="price-list">
-          <!-- Ubranie -->
-          <tr><td>Sprzątanie mieszkania do 50m²</td><td>od 250 zł</td></tr>
-
-          <!-- Meble Tapicerowane -->
-          <tr><td>Narożnik w literę L</td><td>220 PLN</td></tr>
-          <tr><td>Narożnik w literę U</td><td>280 PLN</td></tr>
-          <tr><td>Kanapa prosta 2 osobowa</td><td>150 PLN</td></tr>
-          <tr><td>Kanapa prosta 3 osobowa</td><td>180 PLN</td></tr>
-          <tr><td>Fotel</td><td>100 PLN</td></tr>
-          <tr><td>Fotel z podnóżkiem</td><td>120 PLN</td></tr>
-          <tr><td>Pufa</td><td>40 PLN</td></tr>
-          <tr><td>Krzesło</td><td>20 - 30 PLN</td></tr>
-          <tr><td>Materac 1 osobowy</td><td>100 PLN</td></tr>
-          <tr><td>Materac 2 osobowy</td><td>120 PLN</td></tr>
-
-          <!-- Meble Skórzane -->
-          <tr><td>Narożnik w literę L</td><td>400 PLN</td></tr>
-          <tr><td>Narożnik w literę U</td><td>500 PLN</td></tr>
-          <tr><td>Kanapa prosta</td><td>300 PLN</td></tr>
-          <tr><td>Fotel</td><td>250 PLN</td></tr>
-          <tr><td colspan="2">* cena jest orientacyjna i zostanie zweryfikowana podczas umawiania zlecenia<br>** meble skórzane czyścimy dla wybranych lokalizacji</td></tr>
-
-          <!-- Tapicerka Samochodowa -->
-          <tr><td>Fotele + kanapa + boczki + podłoga</td><td>350 PLN</td></tr>
-          <tr><td>Fotele + kanapa</td><td>200 PLN</td></tr>
-          <tr><td>Bagażnik</td><td>60 PLN</td></tr>
-          <tr><td>Fotelik samochodowy</td><td>60 PLN</td></tr>
-          <tr><td>Ozonowanie</td><td>50 PLN</td></tr>
-          <tr><td>Samochód ciężarowy</td><td>do uzgodnienia</td></tr>
-          <tr><td colspan="2">Minimalny koszt zamówienia: 150 PLN</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="contact">
-      <h2 id="contact-title">Kontakt</h2>
-      <p id="contact-text">
-        Miasto: Poznań<br>
-        Telefon: +48 730 352 641<br>
-        Email: kontakt@okcleaning.pl
-      </p>
-      <a href="tel:+48730352641" class="contact-btn">Skontaktuj się</a>
-    </section>
+<header>
+  <h1 id="title">OK Cleaning</h1>
+  <div class="lang-switch">
+    <button onclick="setLang('pl')">PL</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ua')">UA</button>
   </div>
+  <nav>
+    <a href="#about" id="nav-about">O nas</a>
+    <a href="#prices" id="nav-prices">Cennik</a>
+    <a href="#contact" id="nav-contact">Kontakt</a>
+  </nav>
+</header>
 
-  <footer>
-    <p id="footer-text">© 2025 OK Cleaning – Profesjonalne sprzątanie w Poznaniu</p>
-  </footer>
+<div class="container">
 
-  <script>
-    const translations = {
-      pl: {
-        title: "OK Cleaning",
-        nav: {about:"O nas", prices:"Cennik", contact:"Kontakt"},
-        aboutTitle:"O nas",
-        aboutText:"Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach. Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.",
-        pricesTitle:"Cennik",
-        serviceCol:"Usługa",
-        priceCol:"Cena",
-        contactTitle:"Kontakt",
-        contactText:"Miasto: Poznań\nTelefon: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
-        footer:"© 2025 OK Cleaning – Profesjonalne sprzątanie w Poznaniu"
-      },
-      en: {
-        title: "OK Cleaning",
-        nav: {about:"About us", prices:"Prices", contact:"Contact"},
-        aboutTitle:"About us",
-        aboutText:"We are a professional cleaning company operating in Poznań and nearby towns. Arrival is always free – you pay only for the service. We take care of every detail and customer satisfaction.",
-        pricesTitle:"Prices",
-        serviceCol:"Service",
-        priceCol:"Price",
-        contactTitle:"Contact",
-        contactText:"City: Poznań\nPhone: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
-        footer:"© 2025 OK Cleaning – Professional cleaning in Poznań"
-      },
-      ua: {
-        title: "OK Cleaning",
-        nav: {about:"Про нас", prices:"Ціни", contact:"Контакти"},
-        aboutTitle:"Про нас",
-        aboutText:"Ми – професійна клінінгова компанія, яка працює в Познані та околицях. Приїзд завжди безкоштовний – ви платите лише за послугу. Ми дбаємо про кожну деталь та задоволення клієнта.",
-        pricesTitle:"Ціни",
-        serviceCol:"Послуга",
-        priceCol:"Ціна",
-        contactTitle:"Контакти",
-        contactText:"Місто: Познань\nТелефон: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
-        footer:"© 2025 OK Cleaning – Професійне прибирання в Познані"
-      }
-    };
+<section id="about">
+  <h2 id="about-title">O nas</h2>
+  <p id="about-text">
+    Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach.
+    Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.
+  </p>
 
-    function setLang(lang) {
-      const t = translations[lang];
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("nav-about").innerText = t.nav.about;
-      document.getElementById("nav-prices").innerText = t.nav.prices;
-      document.getElementById("nav-contact").innerText = t.nav.contact;
-      document.getElementById("about-title").innerText = t.aboutTitle;
-      document.getElementById("about-text").innerText = t.aboutText;
-      document.getElementById("prices-title").innerText = t.pricesTitle;
-      document.getElementById("service-col").innerText = t.serviceCol;
-      document.getElementById("price-col").innerText = t.priceCol;
-      document.getElementById("contact-title").innerText = t.contactTitle;
-      document.getElementById("contact-text").innerText = t.contactText;
-      document.getElementById("footer-text").innerText = t.footer;
-    }
-  </script>
+  <div class="advantages">
+    <div class="advantage">
+      <img src="https://img.icons8.com/color/96/000000/safe.png" alt="Bezpieczna chemia">
+      <h3>Bezpieczna chemia</h3>
+      <p>Używamy wyłącznie certyfikowane, hipoalergiczne środki czystości, bezpieczne dla dzieci i zwierząt.</p>
+    </div>
+    <div class="advantage">
+      <img src="https://img.icons8.com/color/96/000000/clock.png" alt="Szybko i sprawnie">
+      <h3>Szybko i sprawnie</h3>
+      <p>Profesjonalny zespół dba o każdy szczegół, aby sprzątanie było efektywne i komfortowe.</p>
+    </div>
+    <div class="advantage">
+      <img src="https://img.icons8.com/color/96/000000/star.png" alt="Najwyższa jakość">
+      <h3>Najwyższa jakość</h3>
+      <p>Dbamy o każdy detal, oferując usługi, które zawsze spełniają oczekiwania klienta.</p>
+    </div>
+  </div>
+</section>
+
+<section id="prices" class="prices">
+<h2 id="prices-title">Cennik</h2>
+
+<h3>Ubranie mieszkań</h3>
+<table>
+  <thead><tr><th>Usługa</th><th>Cena</th></tr></thead>
+  <tbody>
+    <tr><td>Sprzątanie mieszkania do 50m²</td><td>od 250 PLN</td></tr>
+  </tbody>
+</table>
+
+<h3>Pranie tapicerki meblowej</h3>
+<table>
+  <thead><tr><th>Usługa</th><th>Cena</th></tr></thead>
+  <tbody>
+    <tr><td>Narożnik w literę L</td><td>220 PLN</td></tr>
+    <tr><td>Narożnik w literę U</td><td>280 PLN</td></tr>
+    <tr><td>Kanapa prosta 2 osobowa</td><td>150 PLN</td></tr>
+    <tr><td>Kanapa prosta 3 osobowa</td><td>180 PLN</td></tr>
+    <tr><td>Fotel</td><td>100 PLN</td></tr>
+    <tr><td>Fotel z podnóżkiem</td><td>120 PLN</td></tr>
+    <tr><td>Pufa</td><td>40 PLN</td></tr>
+    <tr><td>Krzesło</td><td>20 - 30 PLN</td></tr>
+    <tr><td>Materac 1 osobowy</td><td>100 PLN</td></tr>
+    <tr><td>Materac 2 osobowy</td><td>120 PLN</td></tr>
+  </tbody>
+</table>
+
+<h3>Pranie tapicerki samochodowej</h3>
+<table>
+  <thead><tr><th>Usługa</th><th>Cena</th></tr></thead>
+  <tbody>
+    <tr><td>Fotele + kanapa + boczki + podłoga</td><td>350 PLN</td></tr>
+    <tr><td>Fotele + kanapa</td><td>200 PLN</td></tr>
+    <tr><td>Bagażnik</td><td>60 PLN</td></tr>
+    <tr><td>Fotelik samochodowy</td><td>60 PLN</td></tr>
+    <tr><td>Ozonowanie</td><td>50 PLN</td></tr>
+    <tr><td>Samochód ciężarowy</td><td>do uzgodnienia</td></tr>
+    <tr><td colspan="2">Minimalny koszt zamówienia: 150 PLN</td></tr>
+  </tbody>
+</table>
+</section>
+
+<section id="contact">
+<h2 id="contact-title">Kontakt</h2>
+<p id="contact-text">
+  Miasto: Poznań<br>
+  Telefon: +48 730 352 641<br>
+  Email: kontakt@okcleaning.pl
+</p>
+<a href="tel:+48730352641" class="contact-btn">Skontaktuj się</a>
+</section>
+
+</div>
+
+<footer>
+<p id="footer-text">© 2025 OK Cleaning – Profesjonalne sprzątanie w Poznaniu</p>
+</footer>
+
+<script>
+const translations = {
+  pl: {title:"OK Cleaning", nav:{about:"O nas",prices:"Cennik",contact:"Kontakt"},
+       aboutTitle:"O nas", aboutText:"Jesteśmy profesjonalną firmą sprzątającą działającą w Poznaniu i okolicznych miastach. Przyjazd zawsze jest bezpłatny – płacisz tylko za wykonaną usługę. Dbamy o każdy szczegół i satysfakcję klienta.", 
+       pricesTitle:"Cennik", serviceCol:"Usługa", priceCol:"Cena",
+       contactTitle:"Kontakt", contactText:"Miasto: Poznań\nTelefon: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+       footer:"© 2025 OK Cleaning – Profesjonalne sprzątanie w Poznaniu"},
+  en: {title:"OK Cleaning", nav:{about:"About us",prices:"Prices",contact:"Contact"},
+       aboutTitle:"About us", aboutText:"We are a professional cleaning company operating in Poznań and nearby towns. Arrival is always free – you pay only for the service. We take care of every detail and customer satisfaction.",
+       pricesTitle:"Prices", serviceCol:"Service", priceCol:"Price",
+       contactTitle:"Contact", contactText:"City: Poznań\nPhone: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+       footer:"© 2025 OK Cleaning – Professional cleaning in Poznań"},
+  ua: {title:"OK Cleaning", nav:{about:"Про нас",prices:"Ціни",contact:"Контакти"},
+       aboutTitle:"Про нас", aboutText:"Ми – професійна клінінгова компанія, яка працює в Познані та околицях. Приїзд завжди безкоштовний – ви платите лише за послугу. Ми дбаємо про кожну деталь та задоволення клієнта.",
+       pricesTitle:"Ціни", serviceCol:"Послуга", priceCol:"Ціна",
+       contactTitle:"Контакти", contactText:"Місто: Познань\nТелефон: +48 730 352 641\nEmail: kontakt@okcleaning.pl",
+       footer:"© 2025 OK Cleaning – Професійне прибирання в Познані"}
+};
+function setLang(lang){
+  const t = translations[lang];
+  document.getElementById("title").innerText=t.title;
+  document.getElementById("nav-about").innerText=t.nav.about;
+  document.getElementById("nav-prices").innerText=t.nav.prices;
+  document.getElementById("nav-contact").innerText=t.nav.contact;
+  document.getElementById("about-title").innerText=t.aboutTitle;
+  document.getElementById("about-text").innerText=t.aboutText;
+  document.getElementById("prices-title").innerText=t.pricesTitle;
+  document.getElementById("service-col").innerText=t.serviceCol;
+  document.getElementById("price-col").innerText=t.priceCol;
+  document.getElementById("contact-title").innerText=t.contactTitle;
+  document.getElementById("contact-text").innerText=t.contactText;
+  document.getElementById("footer-text").innerText=t.footer;
+}
+</script>
 
 </body>
 </html>
